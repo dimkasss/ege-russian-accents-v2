@@ -415,17 +415,18 @@ const incorrect_words = [
         'нАдолго',
         'ненАдолго',
 ]
+const dict_length = correct_words.length;
+
+for (let i = 0; i < dict_length; i++) {
+    dict.push( [] )
+}
+for (let i = 0; i < dict_length; i++) {
+    dict[i].push([correct_words[i], incorrect_words[i]])
+}
+const min = 0;
 
 app.get('/words', (req, res) => {
-    for (let i = 0; i < correct_words.length; i++) {
-        dict.push( [] )
-    }
-    for (let i = 0; i < correct_words.length; i++) {
-        dict[i].push([correct_words[i], incorrect_words[i]])
-    }
-    const max = dict.length - 1;
-    const min = 0;
-    const index = Math.floor(Math.random() * (max - min + 1) + min);
+    const index = Math.floor(Math.random() * (dict_length - min) + min);
     const [ firstWord, secondWord ] = dict[index][0];
     const wordsSwap = Math.floor(Math.random() * (2));
     const responseObject = {
