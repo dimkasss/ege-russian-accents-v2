@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import './Button'
+import Button from './Button';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='cont'>
+        <div className="task__name">
+          Задание 4
+        </div>
+        <div className="task__desc">
+          Выберите слово, где <b>верно</b> поставлено ударение:
+        </div>
+        <div className="task__cont">
+          <Button value="аэропОрты" color='purple'/>
+          <Button value="аэропортЫ" color='purple'/>
+        </div>
+        <div className="task__check">
+          <div className="task__check__clearness">
+            -
+          </div>
+          <Button value="Продолжить" color="lightblue"/>
+        </div>
+      </div>
     </div>
   );
 }
