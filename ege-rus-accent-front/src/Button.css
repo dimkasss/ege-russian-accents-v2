@@ -8,3 +8,6 @@
     color: var(--white);
     transition: .3s;
 }
+.Button:hover{
+    filter: brightness(0.95);
+}
